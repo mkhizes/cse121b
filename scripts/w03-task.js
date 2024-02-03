@@ -3,18 +3,20 @@
 /* FUNCTIONS */
 /* Function Definition - Add Numbers */
 function add(number1,number2){
-    return number1+number2;
+    return ;
 
 let addNumber1=Number(document.querySelector('#add1').value);
+let addNumber2=Number(document.querySelector('#add2').value);
 document.querySelector('#sum').value=add(addNumber1, addNumber2);
-document.querySelector('addNumbers').addEventListener('click', addNumbers);    
 }
+document.querySelector('addNumbers').addEventListener('click', addNumbers);    
+
 
 
 /* Function Expression - Subtract Numbers */
 
 const subtract=function(subtract1,subtract2){
-return `$ (subtract1) $ (subtract2)`;
+return subtract1-subtract2;
 
 let subtract1=subtractNumbers(document.querySelector('#subtract1').value);
 document.querySelector('#difference').value=subtract(subtract1, subtract2);
