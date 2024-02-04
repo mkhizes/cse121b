@@ -18,8 +18,8 @@ let myProfile={
 };
 
 document.querySelector('#name').textContent=myProfile.name
-/*const photoElement=document.getElementById('photo');
-const photoElement=document.getElementById('photo');
+photoElement=document.getElementById('#photo');
+
 
 
 
@@ -61,8 +61,16 @@ myProfile.favouriteFoods.forEach(food=>{
 });
 
 /* Hobbies List */
-
+myProfile.hobbies.forEach(hobbies=>{
+    let ul=document.createElement('ul')
+    ul.textContent=hobbies;
+    document.querySelector('#hobbies').appendChild(ul)
+});
 
 /* Places Lived DataList */
-
+myProfile.placesLived.forEach(placesLived=>{
+    let dt=document.createElement('dt')
+    dt.textContent=placesLived;
+    document.querySelector('#place-lived').appendChild(dt)
+});
 
