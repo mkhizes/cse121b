@@ -26,7 +26,7 @@ const displayTemples=(temple)=>{
 const getTemples=async()=>{
     try{
 
-const response=await fetch('replace with actual temple-api-url')
+const response=await fetch('')
 
 templeList=await response.json();
 
@@ -68,13 +68,13 @@ const reset = () => {
 
 /* filterTemples Function */
 
-// Step 9: Function to filter temples based on selected criteria
+//Function to filter temples based on selected criteria
 const filterTemples = (temples) => {
     // Call the reset function to clear the output
     reset();
   
     // Define a variable named filter that obtains the value of the HTML element with the ID 'filtered'
-    var filter = document.getElementById('filtered').value;
+let filter = document.getElementById('filtered').value;
   
     // Use a switch statement to handle different filter cases
     switch (filter) {
