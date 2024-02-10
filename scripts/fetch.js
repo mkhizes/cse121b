@@ -13,7 +13,7 @@ async function getUsers(URL) {
   }
 };
     // doStuff(data);
-function displalUsers(data){
+function displayUsers(data){
     const users =document.querySelector('url');
     data.forEach(users=>{
         const listItem=document.createElementById('li');
