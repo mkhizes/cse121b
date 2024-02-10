@@ -9,8 +9,16 @@ async function getUsers(URL) {
     // .json() also returns a promise...so we await it as well.
     const data = await response.json();
     console.log(data);
+    displayUsers(data)
   }
 };
     // doStuff(data);
-
+function displalUsers(data){
+    const users =document.querySelector('url');
+    data.forEach(users=>{
+        const listItem=document.createElementById('li');
+        listItem.textContent=`${user.fisrtname}  ${user.lastname} | ${user.birthDate}`;
+        userlist.appendChild(listItem);
+    });
+}
     getUsers(url);
