@@ -14,9 +14,9 @@ async function getUsers(URL) {
 };
     // doStuff(data);
 function displayUsers(data){
-    const users =document.querySelector('url');
+    const users =document.querySelector('ul');
     data.forEach(users=>{
-        const listItem=document.createElementById('li');
+        const listItem=document.createElement('li');
         listItem.textContent=`${user.fisrtname}  ${user.lastname} | ${user.birthDate}`;
         userlist.appendChild(listItem);
     });
