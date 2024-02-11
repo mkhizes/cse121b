@@ -17,7 +17,7 @@ function displayUsers(data){
     const userlist =document.querySelector("ul");
     data.forEach(user=>{
         const listItem=document.createElement("li");
-        listItem.textContent=`${user.fisrtname}  ${user.lastname} | ${user.birthDate}`;
+        listItem.textContent=`${user.fisrtname} ${user.lastname} | ${user.birthDate}`;
         userlist.appendChild(listItem);
     });
 }

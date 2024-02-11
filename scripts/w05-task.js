@@ -1,8 +1,9 @@
 /* W05: Programming Tasks */
 
 /* Declare and initialize global variables */
-const templesElement=document.getElementById('your DivId');
+const templesElement=document.getElementById('temples');
 let templeList=[];
+const url="https://jsonplaceholder.org/users";
 
 /* async displayTemples Function */
 const displayTemples=(temple)=>{
@@ -32,7 +33,7 @@ templeList=await response.json();
 
 displayTemples(templeList);
     } catch(error){
-      console.error('Error fetching or display tmeple data:',error)  
+      console.error('Error fetching or display temples data:',error)  
     }
 };
 
