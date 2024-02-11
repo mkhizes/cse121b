@@ -8,15 +8,15 @@ async function getUsers(URL) {
     // the API will send us JSON...but we have to convert the response before we can use it
     // .json() also returns a promise...so we await it as well.
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     displayUsers(data)
   }
 };
     // doStuff(data);
 function displayUsers(data){
-    const users =document.querySelector('ul');
+    const users =document.querySelector("ul");
     data.forEach(user=>{
-        const listItem=document.createElement('li');
+        const listItem=document.createElement("li");
         listItem.textContent=`${user.fisrtname}  ${user.lastname} | ${user.birthDate}`;
         userlist.appendChild(listItem);
     });
