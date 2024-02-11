@@ -6,8 +6,8 @@ let templeList=[];
 const url="https://jsonplaceholder.org/users";
 
 /* async displayTemples Function */
-const displayTemples=(temple)=>{
-    templesElement.forEach((temple)=>{
+const displayTemples=(URL)=>{
+    templesElement.forEach((URL)=>{
         
     let articleElement=document.createElement('article');
 
@@ -24,10 +24,10 @@ const displayTemples=(temple)=>{
     });
 };
 // Async arrow function expression to get temples
-const getTemples=async()=>{
+const getTemples=async(URL)=>{
     try{
 
-const response=await fetch('')
+const response=await fetch(URL)
 
 templeList=await response.json();
 
@@ -38,8 +38,8 @@ displayTemples(templeList);
 };
 
   // Async arrow function expression to process temples
-  const processTemples = async () => {
-    const templesData = await fetchTemplesData();
+  const processTemples = async (URL) => {
+    const templesData = await fetchTemplesData(url);
 
     // Update the global templeList array with the fetched data
     templeList = templesData;
