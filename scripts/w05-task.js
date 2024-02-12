@@ -3,7 +3,7 @@
 /* Declare and initialize global variables */
 const templesElement=document.getElementById('temples');
 const templeList=[];
-
+const url='https://jsonplaceholder.org/users'
 /* async displayTemples Function */
 const displayTemples=(temple)=>{
     const templeList =document.querySelector("ul")
@@ -26,7 +26,7 @@ const displayTemples=(temple)=>{
     });
 };
 // Async arrow function expression to get temples
-const getTemples=async()=>{
+const getTemples=async(URL)=>{
     try{
 
 const response=await fetch('https://jsonplaceholder.org/users')
