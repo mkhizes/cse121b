@@ -2,80 +2,79 @@
 
 /* Declare and initialize global variables */
 const templesElement=document.getElementById('temples');
-let templeList=[];
-const url="https://jsonplaceholder.org/users";
+const templeList=[];
 
 /* async displayTemples Function */
-const displayTemples=(URL)=>{
-    templesElement.forEach((URL)=>{
+const displayTemples=(temple)=>{
+    const templeList =document.querySelector("ul")
+    temples.forEach((temple)=>{
         
-    let articleElement=document.createElement('article');
+    const articleElement=document.createElement('article');
 
-    let h3Element=document.createElement('h3');
+    const h3Element=document.createElement('h3');
     h3Element.textContent=temple.templeName;
 
 
-    let imgElement=document.createElement('img');
+    const imgElement=document.createElement('img');
     imgElement.src=temple.imageUrl;
     imgElement.alt=temple.location;
 
     articleElement.appendChild(h3Element);
     articleElement.appendChild(imgElement);
+    // Append the <article> element to the global templesElement
+    templesElement.appendChild(articleElement);
     });
 };
 // Async arrow function expression to get temples
-const getTemples=async(URL)=>{
+const getTemples=async()=>{
     try{
 
-const response=await fetch(URL)
+const response=await fetch('https://byui-cse.github.io/cse121b-ww-course/resources/temples.json')
 
 templeList=await response.json();
 
 displayTemples(templeList);
     } catch(error){
-      console.error('Error fetching or display temples data:',error)  
+      console.error('Error fetching or display temple data:',error); 
     }
 };
 
-  // Async arrow function expression to process temples
-  const processTemples = async (URL) => {
-    const templesData = await fetchTemplesData(url);
+//   // Async arrow function expression to process temples
+//   const processTemples = async () => {
+//     const templesData = await fetchTemplesData();
 
-    // Update the global templeList array with the fetched data
-    templeList = templesData;
+//     // Update the global templeList array with the fetched data
+//     templeList = templesData;
 
-    // Process each temple in the templeList array
-    templeList.forEach((temple) => {
-      // Perform actions for each temple item
-      console.log('Temple Name:', temple.templeName);
-      console.log('Temple Image URL:', temple.imageUrl);
-      console.log('Temple Location:', temple.location);
-      console.log('------------------------');
-    });
-  };
+//     // Process each temple in the templeList array
+//     templeList.forEach((temple) => {
+//       // Perform actions for each temple item
+//       console.log('Temple Name:', temple.templeName);
+//       console.log('Temple Image URL:', temple.imageUrl);
+//       console.log('Temple Location:', temple.location);
+//       console.log('------------------------');
+//     });
+//   };
 
-  // Call the processTemples function
-  processTemples();
+//   // Call the processTemples function
+//   processTemples();
 
-/* async getTemples Function using fetch()*/
+// /* async getTemples Function using fetch()*/
 
 
 /* reset Function */
-// Step 8: Function to reset displayed temples
 const reset = () => {
     // Clear all <article> elements from the templesElement
     templesElement.innerHTML = '';
   };
 
 /* filterTemples Function */
-
-//Function to filter temples based on selected criteria
 const filterTemples = (temples) => {
     // Call the reset function to clear the output
     reset();
   
     // Define a variable named filter that obtains the value of the HTML element with the ID 'filtered'
-let filter = document.getElementById('filtered').value;
+var filter = document.getElementById('filtered').value;
   
     // Use a switch statement to handle different filter cases
     switch (filter) {
@@ -99,7 +98,6 @@ let filter = document.getElementById('filtered').value;
     }
   };
 
-getTemples();
 
 /* Event Listener */
 // Step 10: Add a change event listener to the HTML element with the ID 'filtered'
@@ -107,3 +105,5 @@ document.getElementById('filtered').addEventListener('change', () => {
     // Call the filterTemples function with the templeList as the argument
     filterTemples(templeList);
   });
+
+  getTemples();
