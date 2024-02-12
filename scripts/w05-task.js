@@ -29,7 +29,7 @@ const displayTemples=(temple)=>{
 const getTemples=async()=>{
     try{
 
-const response=await fetch('https://byui-cse.github.io/cse121b-ww-course/resources/temples.json')
+const response=await fetch('https://jsonplaceholder.org/users')
 
 templeList=await response.json();
 
@@ -101,7 +101,7 @@ var filter = document.getElementById('filtered').value;
 
 /* Event Listener */
 // Step 10: Add a change event listener to the HTML element with the ID 'filtered'
-document.getElementById('filtered').addEventListener('change', () => {
+document.getElementById('filtered').addEventListener('change', (templeList) => {
     // Call the filterTemples function with the templeList as the argument
     filterTemples(templeList);
   });
